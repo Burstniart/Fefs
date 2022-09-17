@@ -39,4 +39,6 @@ this add the user to the super users group
  
 su: switch user, pretty straight forward
 
+to disable root login:
+sudo vi /etc/ssh/sshd:config
 
