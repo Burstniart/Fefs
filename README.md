@@ -6,3 +6,17 @@ The template used is the simpleServer.js file, which is runned with node and tha
 1. Get a server: Right now I got a Digital Ocean server running Ubuntu 20 LTS, apparently I could get an Azure or AWS server running, for know I'm using some credits given to me to use un Digital ocean but since it requires the minimum you can get a server up and running for 6 dollars a month, again this is for basic tiers on this cloud providers, maybe there are some free tiers out there that work for small projectsFly.io and Oracle Cloud I'm looking at both of you.
 
 	1. Generate your ssh key: ssh-keygen generates ssh keys which you then use to log in your server.
+
+1. Get a domain name: Got mine from Github student pack offer from Namecheap, I have a couple left but this one gets me a .me domain for now.
+(On a funny note I checked a github actions box and it automatically deployed my user.github.io page, cool I guess...)
+
+1. Set domain name on your server: Add your domain to your server
+
+	1. Create 2 records for your domain in your server: These A type DNS records will point to different places, "@" will point to the root and "www" to the main hostname I'm guessing
+
+	
+	- While your at it get your server name links, we'll need them to add them in the domain
+
+1. Set the server names on your domain: Add nameservers as customDNS to your domain, you know, the ones I said we'll be needing; this may take some time so we'll set up the server to kill some time
+
+ 
