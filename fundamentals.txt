@@ -29,7 +29,7 @@ connect through ssh to your server, check digital ocean for the ip address
 use byobu for multiple screens at once
 keep on learning vim ;)
 
-
+Write down a readme with all the steps so you dont forget pls
 
 
 
