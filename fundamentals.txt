@@ -33,6 +33,10 @@ keep on learning vim ;)
 
 Write down a readme with all the steps so you dont forget pls
 
-
+***
+usermod -aG sudo user 
+this add the user to the super users group
+ 
+su: switch user, pretty straight forward
 
 

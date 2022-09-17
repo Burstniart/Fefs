@@ -19,4 +19,16 @@ The template used is the simpleServer.js file, which is runned with node and tha
 
 1. Set the server names on your domain: Add nameservers as customDNS to your domain, you know, the ones I said we'll be needing; this may take some time so we'll set up the server to kill some time
 
- 
+- Updating my server so it works nice and smooth~
+
+1. Set up a new user: Leaving root as default is dangerous!
+	1. Create a new user
+	1. Give it sudo!
+
+1. Add your authorized keys: Create a file inside the ~/.ssh/ directory, there we'll be adding our public ssh key to aDD user log.
+On a side note i couldn't log in the first time, it said something about permission denied and public key so I re-cpied and pasted the public key and also indicate that my user@direction should ssh in  with the key as such:
+ssh -i ~/.ssh/mykey user@direction(ip)
+
+
+
+
