@@ -18,6 +18,8 @@ hide line numbers: 'set nonumber'
 join lines down?: shft + j
 append at EOl: 'A'
 
+ssh-keygen: generates a key
+
 note: config ssh file appears to be under /etc/ssh route
 
 connect to server with ssh key: ' ssh -i ~/.ssh/fsfe root@YOUR_IP ' 
