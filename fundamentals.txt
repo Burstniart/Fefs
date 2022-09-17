@@ -1,0 +1,36 @@
+man traceroute
+shows the hops a call to a domain go through to get there
+
+vim commands
+modes:
+insert mode : "i"
+command mode : ESC (key)
+last line : ":"
+
+how to quit
+ESC :q!
+this means quit, get me out!
+
+
+show line numbers: ':set number'
+hide line numbers: 'set nonumber'
+
+join lines down?: shft + j
+append at EOl: 'A'
+
+note: config ssh file appears to be under /etc/ssh route
+
+connect to server with ssh key: ' ssh -i ~/.ssh/fsfe root@YOUR_IP ' 
+
+connect to server: ' ssh  root@YOUR_IP ' apparently if you put your jey in the righ place this just connects automatically
+
+run server when starting, I guess
+connect through ssh to your server, check digital ocean for the ip address
+use byobu for multiple screens at once
+keep on learning vim ;)
+
+
+
+
+
+
