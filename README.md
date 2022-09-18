@@ -29,7 +29,7 @@ The template used is the simpleServer.js file, which is runned with node and tha
 On a side note i couldn't log in the first time, it said something about permission denied and public key so I re-cpied and pasted the public key and also indicate that my user@direction should ssh in  with the key as such:
 ssh -i ~/.ssh/mykey user@direction(ip)
 
-**Important: change permissions with chmod to the authorized keys files in order to prevent anyone from reading or modifying it, 644 should allow sudo and some process that need it to consult it **
+	**Important: change permissions with chmod to the authorized keys files in order to prevent anyone from reading or modifying it, 644 should allow sudo and some process that need it to consult it** 
 
 1. Lock root out: Disable root login from the sshd (daemon) config file.
 
