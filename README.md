@@ -19,7 +19,7 @@ The template used is the simpleServer.js file, which is runned with node and tha
 
 1. Set the server names on your domain: Add nameservers as customDNS to your domain, you know, the ones I said we'll be needing; this may take some time so we'll set up the server to kill some time
 
-- Updating my server so it works nice and smooth~
+	- Updating my server so it works nice and smooth~
 
 1. Set up a new user: Leaving root as default is dangerous!
 	1. Create a new user
