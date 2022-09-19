@@ -38,5 +38,27 @@ ssh -i ~/.ssh/mykey user@direction(ip)
 After that simply restart the service:
 sudo service sshd restart
 
- 
+1. Install Nginx: What goes where?
+
+Since our server now is up and running we need something to manage the work and Nginx is the man for the job.
+I love to say nginx... NGINX NGINX NGINX NGINX NGINX NGINX!!!!!
+
+  - Install nginx in the server machine, not your local machine:
+
+	sudo apt install nginx
+
+  - Get the service up and running:
+
+	sudo service nginx start
+
+1. Modify homepage your way: Creating a HTML file.
+
+Here's the thing: Most people use this route to store their pages, it can be modified but since it's a standard we'll be keeping things there.
+Oh the route is `/var/www/html/` so go ahead and create a simple html file, it doesn't have to be a fully fleshed html file, passing plain text will work for now
+
+
+   sudo vi /var/www/html/index.html
+
+*I'll include the file I used and a screenshot here*
+ >> include index screenshot here
 
