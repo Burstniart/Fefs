@@ -24,7 +24,7 @@ note: config ssh file appears to be under /etc/ssh route
 
 connect to server with ssh key: ' ssh -i ~/.ssh/fsfe root@YOUR_IP ' 
 
-connect to server: ' ssh  root@YOUR_IP ' apparently if you put your jey in the righ place this just connects automatically
+connect to server: ' ssh  root@YOUR_IP ' apparently if you put your the key in the righ place this just connects automatically
 
 run server when starting, I guess
 connect through ssh to your server, check digital ocean for the ip address
@@ -41,4 +41,7 @@ su: switch user, pretty straight forward
 
 to disable root login:
 sudo vi /etc/ssh/sshd:config
+
+Here you can store an html file to show as nginx loads the domain your server is associated:
+/var/www/html
 

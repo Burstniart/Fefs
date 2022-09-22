@@ -62,3 +62,12 @@ Oh the route is `/var/www/html/` so go ahead and create a simple html file, it d
 *I'll include the file I used and a screenshot here*
  >> include index screenshot here
 
+1. Create an application server with NodeJS
+
+Now lets go ahead and download NodeJS and NPM  to manage our application server, from your server run:
+	
+	sudo apt install nodejs npm
+
+Also while we're at it let's install git
+
+	sudo apt install git
