@@ -71,3 +71,75 @@ Now lets go ahead and download NodeJS and NPM  to manage our application server,
 Also while we're at it let's install git
 
 	sudo apt install git
+
+1. The set up
+
+Change ownership of the www directory to the current user
+
+	sudo chown -r $USER:$USER /var/www
+
+Note: $USER calls your current user so the command can be typed like so as long as your current user is the right one
+
+Create app directory inside www directory, this will be our app directory
+
+	mkdir /var/www/app
+
+Initialize a repository with git inside with `git init`
+
+- Inside the app directory you can go ahead and create the architecture for your project, for this one I've created an app.js file and ui directory with a js, css and html directories inside
+
+1. Bring in JSON
+This is a well known process, let's create our JSON file to start managing our project since this is running with node:
+
+	npm init
+
+1. Bring in Express
+Express is a JS web server that we'll use to handle our server, install it with npm
+
+	npm i express --save
+
+1. Set the server, again
+Alright so now write the server but this time do it in the express syntax, feel free to do it your way or maybe just copy and paste the express snippet provided as an example
+https://expressjs.com/en/starter/hello-world.html
+
+- Once our app.js file is set you can run it with 'node app.js' but since it's pointing to the port 3000 it wont be accesible unless you specify it
+
+url.dom:port
+
+So we got to tell Nginx to conect
+
+1. Point Nginx to the right port
+Do a 'sudo vi /etc/nginx/sites-available/default' to add in the proxy pass directive, this where you wind the '''location / {}''' tag we'll add inside the curly braces:
+
+	proxy_pass http://127.0.0.1:300/;
+
+The benefit of doing this is being able to run multiple apps, rout databases and they wont affect each other if one is taken down
+
+- Go ahead and restart your server once the changes are done
+
+	sudo service nginx reload
+
+After refreshing your page you'll be able to see the changes, don't forget to start your app before refreshing tho
+
+
+1. Add a process manager
+A process manager will keep the app up and running and handle errors ir might encounter, so it will make mantaining the server an easier job
+Let us begin by doing a globla installation of PM2 as a process manager:
+
+   sudo npm i -g pm2
+
+Now let's go and statr PM2
+
+   pm2 start app.js
+
+To setup the auto restart, which is why we're here
+
+    pm2 startup
+
+Copy and paste the code provided by NP2 to set up the startup script, it should do it automatically but I encountered and error while testing so if you test by shutting down your server and turning it back on again resolving in your app not coming back on it's own simply repeat those steps but include the script
+
+Test with 'pm2 status' to see the process status
+
+After that do a 'pm2 save' to save changes
+
+

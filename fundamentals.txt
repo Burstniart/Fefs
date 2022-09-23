@@ -45,3 +45,33 @@ sudo vi /etc/ssh/sshd:config
 Here you can store an html file to show as nginx loads the domain your server is associated:
 /var/www/html
 
+change owenership of a directory to the current user
+sudo chown -R $USER:$USER /var/www
+note: $USER will callback with the current user, it's the same as typing the users name
+
+create a json file: npm init
+helps manage package name, license, etc
+
+install express: npm i express --save
+note: --save sets the dependencie to be written in the json iim guessing so when you pull this project from somewhere all your dependencies are installed as well
+
+use directives: proxy_pass 
+this will proxy whats on the root domain to the actual node server on a different port
+edit /etc/nginx/sites-available/default
+
+Inside the location / {} directive: the edit will point to the port 3000 so it'll look like so:
+proxy_pass http://127.0.0:300/;
+
+process manager: install PM2 
+sudo npm i -g pm2
+note: '-g' is a global installation, in this case we want it so it can handle multiple apps inside the server but it isn't typically adviced to do so
+
+start pm2: pm2 start app.js
+
+set auto restart: pm2 startup
+Note: this creates a daemon which will always start the application when we start the server
+
+copy the code snippet provided to setup the  startup script 
+
+pm2 status: returns the status of the process
+
