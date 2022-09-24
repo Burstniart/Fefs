@@ -142,4 +142,40 @@ Test with 'pm2 status' to see the process status
 
 After that do a 'pm2 save' to save changes
 
+****
+
+This may very well be a separate topic: GIT
+
+***
+1. Create a git repository
+I created a github reposiroty, you do as you please.
+
+1. Create SSH key
+You know the drill by now:
+From out server head over to the ssh dir at '~/.shh'
+
+    ssh-keygen
+
+- Since there aren't other keys in our server leaving the deafult name will save us time from adding a new key to our keychain and it will automatically connect us, so that's nice.
+
+	I decided to add a passphrase to mine, as well as making this repo private for the sake of security, this rather being commentary is a reminder for future me if I ever find myself locked out, you added a passphrase to your ssh key in your server... so yeah.
+
+
+1. Add SSH key to Github
+Easy breezy, no hassle,  just head over to Settings/SSH and add a new key, remember to add the public key, that is the key that ends with '.pub'
+
+ Here I'm gonna emphazise the importance of following the steps in order, since github requires you to authenticate yourself in order to access remotely, if you haven't configure your new SSH key you wont be able to add your remote repository in your server and that's missing out on working from any environment you'd like and simply pushing your changes rather than having to work inside the server in to apply any changes locally.
+
+
+1. Add remote repo 
+Remember the repository we initialize inside '/var/www/app' well now that's where we're gonna add our remote so go head over there to add our remote, for that we'll be using the SSH clone option from the repository we just made, copy it and the rest is the same:
+
+    git remote add origin git@github.com/user/repositoryname
+
+1. Push local repository to Github
+Before commiting any changes first I'm gonna  include a git ignore for node_modules, if you don't have one write a simple '.gitignore' file and and 'node_modules' so you don't end up pushing node modules
+
+Set your repository, personally I like to make sure I'm on the master branch by setting branch -M master and pushing as push -u origin master which sets my upstream.
+
+***
 
