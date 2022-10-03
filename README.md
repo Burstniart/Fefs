@@ -195,5 +195,25 @@ app.get('/demo',(req, res) => {
 ``
 Note: I had to do a rerun of npm with 'npm i', delete the previous pm2 proccess of my app and re start it, should have just restart it in the first place
 
+1. Name your server
+Inside the route go do a 'sudo vi /etc/nginx/sites-available/default' edit that file
 
+- Go to 'server_name' where we added a proxy pass and right after it add your server names like the DNS records in our server
+'server_name lexgc.me www.lexgc.me;'
+
+1. Enabling HTTPS in our page
+
+The lovely people at EFF with Certbot allow us to get a HTTPS certificate
+
+Visit them here: https://certbot.eff.org/
+And follow the instructions there
+
+In this case since I allowed certbot to certificate all domains which are only two, this will renew before they expire automatically
+We can see certbot modified the default nginx configuration file, and that and by refreshing our page ad seeing the little lock, is how we know we are know http cerrtified ;)
+
+To change to http/2 protocol add 'http2' after 'listen #pornumber http2' to enable HTTP/2 which is faster, better and so on
+
+***
+At this point I decided to edit my app.js file, to point it to the homepage I dessigned at the begginix just cause I wanted to see somehting actually display on the page, simply rerun npm i and restart my pm2 process and done
+***
 
