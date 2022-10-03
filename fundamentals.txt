@@ -60,7 +60,7 @@ this will proxy whats on the root domain to the actual node server on a differen
 edit /etc/nginx/sites-available/default
 
 Inside the location / {} directive: the edit will point to the port 3000 so it'll look like so:
-proxy_pass http://127.0.0:300/;
+proxy_pass http://127.0.0:3000/;
 
 process manager: install PM2 
 sudo npm i -g pm2
@@ -75,3 +75,17 @@ copy the code snippet provided to setup the  startup script
 
 pm2 status: returns the status of the process
 
+/var/log/auth.log contains the logs of people trying to get in the server
+
+pm2 delete: deletes pm2 process
+
+npm i: installs npm (this is ofr something but i shlud research cause i dont know
+
+snippet for route and custom header:
+app.get('/demo',(req, res) => {
+    res.set('X-full-stack', '4life');
+    res.status(418);
+    res.send('Coffee rules!');
+});
+
+)

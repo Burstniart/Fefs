@@ -111,7 +111,7 @@ So we got to tell Nginx to conect
 1. Point Nginx to the right port
 Do a 'sudo vi /etc/nginx/sites-available/default' to add in the proxy pass directive, this where you wind the '''location / {}''' tag we'll add inside the curly braces:
 
-	proxy_pass http://127.0.0.1:300/;
+	proxy_pass http://127.0.0.1:3000/;
 
 The benefit of doing this is being able to run multiple apps, rout databases and they wont affect each other if one is taken down
 
@@ -142,7 +142,7 @@ Test with 'pm2 status' to see the process status
 
 After that do a 'pm2 save' to save changes
 
-****
+***
 
 This may very well be a separate topic: GIT
 
@@ -177,5 +177,23 @@ Before commiting any changes first I'm gonna  include a git ignore for node_modu
 
 Set your repository, personally I like to make sure I'm on the master branch by setting branch -M master and pushing as push -u origin master which sets my upstream.
 
-***
+1. Security thread
+
+Theres a package to attend security patches in files as they are released ant thats *unattended-upgrades*, which will install updates.
+
+
+1. Adding a custom header and new  route
+
+I forgot how to do it but here it is: The code goes like this
+
+``
+app.get('/demo',(req, res) => {
+    res.set('X-custom-header-thing', 'I choose anything');
+    res.status(418);
+    res.send('Display this in route!');
+});
+``
+Note: I had to do a rerun of npm with 'npm i', delete the previous pm2 proccess of my app and re start it, should have just restart it in the first place
+
+
 
