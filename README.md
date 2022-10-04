@@ -217,3 +217,16 @@ To change to http/2 protocol add 'http2' after 'listen #pornumber http2' to enab
 At this point I decided to edit my app.js file, to point it to the homepage I dessigned at the begginix just cause I wanted to see somehting actually display on the page, simply rerun npm i and restart my pm2 process and done
 ***
 
+1. As a final step adding something about web sockets, just goes about showing how to add another process and configure nginx to use websockets to keep the connection alive
+We add a directory inside our /var/www/ route which is where our app lives, then we run 'npm i' to add node modules that are needed, then we stop our current pm2 process, start our new app.js and add the following snippet to  /etc/nginx/sites-available/default
+
+code snippet:
+'''
+location / {
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}
+'''
+restart our service with 'sudo service nginx reload'
+and we are done!
+

@@ -88,4 +88,14 @@ app.get('/demo',(req, res) => {
     res.send('Coffee rules!');
 });
 
+look into starting daemon services as the server starts for when you need a service to start with your server, say you want pm2 to start as soon as you restart server as we did, look into that
+
+code snippet:
+'''
+location / {
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}
+'''
+
 )
